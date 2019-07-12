@@ -1,5 +1,6 @@
 import React from 'react'
 import './WelcomeScreen.css';
+import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 
 class WelcomeScreen extends React.Component {
   constructor() {
@@ -7,23 +8,18 @@ class WelcomeScreen extends React.Component {
     this.state={
       showComponent: false,
     }
-    this.handleEnterClick = this.handleEnterClick.bind(this)
   }
 
-  handleEnterClick() {
-    this.setState({
-      showComponent: true,
-    });
-  }
   render() {
     return(
       <div className= "welcome">
       <h1> NBA Player Search </h1>
       <center>
-      <button
-        onClick= {this.handleEnterClick}>
-        Enter Here
-      </button>
+      <Link to="/playerprofile">
+        <button type="button">
+          Enter Here
+        </button>
+      </Link>
       </center>
 
       </div>

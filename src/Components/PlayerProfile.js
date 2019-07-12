@@ -4,6 +4,8 @@ import playerData from "../data/playerData.json"
 import playerInfoData from "../data/playerInfoData.json"
 import './PlayerProfile.css';
 import teamData from "../data/teamData.json"
+import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
+import Typing from 'react-typing-animation'
 
 class PlayerProfile extends React.Component {
 
@@ -16,7 +18,7 @@ class PlayerProfile extends React.Component {
       searchedName: "",
       searchedPlayerInfo: [],
       defaultImgLink: "",
-      isReady: false
+      show: false
 
     }
     this.handleChange = this.handleChange.bind(this)
@@ -24,9 +26,6 @@ class PlayerProfile extends React.Component {
     this.handleStats = this.handleStats.bind(this)
   }
 
-  componentDidMount() {
-
-  }
 
 
   handleChange(event) {
@@ -44,13 +43,18 @@ class PlayerProfile extends React.Component {
             [event.target.name]: this.state.playerInfo[i]
           })
       }
-      this.setState({
-        isReady: true
-      })
     }
+    this.updateShow(this.state)
   }
 
-  handleStats(event) {
+  updateShow() {
+    this.state.show = true
+    console.log(this.state.show)
+  }
+
+  handleStats(props) {
+
+
     let teamId = this.state.searchedPlayerInfo.teamId
     for (var i = 0; i < this.state.teamInfo.length; i++){
       if (this.state.teamInfo[i].teamId == teamId) {
@@ -74,23 +78,6 @@ class PlayerProfile extends React.Component {
 
     return (
       <div className="nba-app">
-      <center>
-          <input
-            type= "text"
-            name="searchedName"
-            value={this.state.searchedName}
-            onChange={this.handleChange}
-            placeholder="Search Name"
-            />
-          <button
-            onClick= {this.handleSubmit}
-            name= "searchedPlayerInfo"
-            value= {this.state.searchedName}>
-            Submit
-          </button>
-
-          <h1> {this.state.searchedPlayerInfo.firstName} {this.state.searchedPlayerInfo.lastName} </h1>
-        </center>
 
           <div className="stats">
             <img src={link}/>
@@ -107,11 +94,74 @@ class PlayerProfile extends React.Component {
   }
 
   render() {
+    if (this.state.show === true) {
       return (
         <div className="nba-app">
+        <div className = "back">
+        <Link to="/">
+          <button type="button">
+            Back to Home
+          </button>
+        </Link>
+        </div>
+        <center>
+            <input
+              type= "text"
+              name="searchedName"
+              value={this.state.searchedName}
+              onChange={this.handleChange}
+              placeholder="Search Name"
+              />
+            <button
+              onClick= {this.handleSubmit}
+              name= "searchedPlayerInfo"
+              show= "show"
+              update= {true}
+              value= {this.state.searchedName}>
+              Submit
+            </button>
+
+            <h1> {this.state.searchedPlayerInfo.firstName} {this.state.searchedPlayerInfo.lastName} </h1>
+          </center>
         {this.handleStats()}
         </div>
       );
+    } else {
+      return (
+        <div>
+        <div className = "back">
+        <Link to="/">
+          <button type="button">
+            Back to Home
+          </button>
+        </Link>
+        </div>
+        <center>
+            <input
+              type= "text"
+              name="searchedName"
+              value={this.state.searchedName}
+              onChange={this.handleChange}
+              placeholder="Search Name"
+              />
+            <button
+              onClick= {this.handleSubmit}
+              name= "searchedPlayerInfo"
+              value= {this.state.searchedName}>
+              Submit
+            </button>
+          </center>
+          <div className = "default">
+          <center>
+          <img src={require('../images/jordan.gif')}/>
+          <Typing speed={50}>
+					<h3> Enter Name for stats on a specified player </h3>
+					</Typing>
+          </center>
+          </div>
+        </div>
+      )
+    }
   }
 
 }

@@ -8,6 +8,16 @@
   src: url('../fonts/stat_font.otf');
 }
 
+@font-face {
+  font-family: 'black';
+  src: url('../fonts/black.ttf');
+}
+
+@font-face {
+  font-family: 'moonglade';
+  src: url('../fonts/moonglade.ttf');
+}
+
 h1{
   margin-top: 2%;
   font-family: 'title';
@@ -45,7 +55,6 @@ input {
 }
 
 button {
-  margin-top: 2.5%;
   height: 47px;
   width: 70px;
   color: white;
@@ -54,4 +63,31 @@ button {
   background-color: #38393b;
   border-width: 3px;
   border-color: black;
+}
+
+.back button {
+  height: 47px;
+  width: 150px;
+  color: white;
+  font-family: 'title';
+  font-size: 25px;
+  background-color: #38393b;
+  border-width: 3px;
+  border-color: white;
+}
+
+h2 {
+  font-family: 'stat';
+  font-size: 50px;
+  color: black;
+}
+.default img {
+  margin-top: 5%;
+}
+
+h3 {
+  font-family: 'title';
+  font-size: 70px;
+  color: white;
+  margin-top: 1%;
 }

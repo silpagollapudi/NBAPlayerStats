@@ -5,13 +5,18 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import PlayerProfile from "./Components/PlayerProfile"
 import WelcomeScreen from "./Components/WelcomeScreen"
 
-function App() {
-  return (
-    <div className = "nba-app">
-      <WelcomeScreen />
-    </div>
+class App extends React.Component {
 
-  );
+  render() {
+    return (
+      <BrowserRouter>
+            <Switch>
+              <Route path = "/" component = {WelcomeScreen} exact/>
+              <Route path = "/playerprofile" component = {PlayerProfile} />
+            </Switch>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
