@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'title';
+  src: url('../fonts/title_font.otf');
+}
+
+@font-face {
+  font-family: 'stat';
+  src: url('../fonts/stat_font.otf');
+}
+
+h1{
+  margin-top: 2%;
+  font-family: 'title';
+  color: #FFD700;
+  font-size: 125px;
+  border-color: black;
+}
+.stats img{
+  display: inline-block;
+  float: left;
+  width: 700px;
+  margin-left: 8%;
+}
+
+.stats p{
+  font-family: 'stat';
+  color: white;
+  font-size: 30px;
+  width: 28.9%;
+  float: right;
+  display: inline-block;
+  margin-top: 1px;
+}
+
+input {
+  margin-top: 2.5%;
+  height: 40px;
+  width: 160px;
+  background-color: #38393b;
+  font-size: 20px;
+  color: white;
+  font-family: 'stat';
+  border-width: 3px;
+  border-color: black;
+}
+
+button {
+  margin-top: 2.5%;
+  height: 47px;
+  width: 70px;
+  color: white;
+  font-family: 'stat';
+  font-size: 16px;
+  background-color: #38393b;
+  border-width: 3px;
+  border-color: black;
+}

@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'black';
+  src: url('../fonts/black.ttf');
+}
+
+@font-face {
+  font-family: 'moonglade';
+  src: url('../fonts/moonglade.ttf');
+}
+
+@font-face {
+  font-family: 'title';
+  src: url('../fonts/title_font.otf');
+}
+
+.welcome h1{
+  color: black;
+  text-align: center;
+  font-family: 'moonglade';
+  font-size: 200px;
+}
+
+.welcome button{
+  color: white;
+  text-align: center;
+  font-family: 'title';
+  font-size: 50px;
+  width: 250px;
+  height: 75px;
+  border-color: white;
+}
