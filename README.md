@@ -10,7 +10,7 @@ Author: Silpa Gollapudi
 
 [User can type in search box to search player](https://github.com/silpagollapudi/NBAPlayerStats/blob/master/src/images/3.png)
 
-[Screen shows player headshot with up-to-date stats](https://github.com/silpagollapudi/NBAPlayerStats/blob/master/src/images/4.png)
+[Screen shows player headshot with up-to-date stats](https://github.com/silpagollapudi/NBAPlayerStats/blob/master/src/images/3.png)
 
 
 
